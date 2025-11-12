@@ -1,0 +1,12 @@
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Página Inicial";
+}
+<div class="text-center">
+    <h1 class="display-4">Bem-vindo ao Cadastro de Clientes</h1>
+    <p>Este é um projeto híbrido: API e Frontend MVC conectados ao MongoDB.</p>
+    <hr/>
+    <p>Use o link abaixo para gerenciar os clientes:</p>
+    <a asp-controller="Clientes" asp-action="Index" class="btn btn-primary btn-lg">Acessar a Lista de Clientes</a>
+    <p class="mt-4">Para testar os endpoints da API, use o <a href="/swagger">Swagger</a>.</p>
+</div>

@@ -1,0 +1,57 @@
+@model IEnumerable<CadastroClienteApi.Models.Cliente>
+@{
+    // FORÇAR O USO DO LAYOUT AQUI (Solução definitiva para o problema de renderização)
+    Layout = "_Layout";
+    ViewData["Title"] = "Lista de Clientes";
+}
+<h1>Lista de Clientes</h1>
+<p>
+    <!-- O asp-action será traduzido para o link correto -->
+    <a asp-action="Create" class="btn btn-success btn-sm">Novo Cadastro</a>
+</p>
+<!-- Garantir que a tag 'table' tenha a classe 'table' para estilização -->
+<table class="table">
+    <thead>
+        <tr>
+            <!-- Colunas do Cabeçalho -->
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CPF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <!-- Células de Dados -->
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CPF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                <!-- Links de Ação com classes de botão para o site.css -->
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-info">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-secondary">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

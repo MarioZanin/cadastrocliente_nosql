@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Cadastro Cliente MVC</title>
+    <!-- Link para o CSS principal, que agora contém toda a estilização -->
+    <link rel="stylesheet" href="/css/site.css" /> 
+    <!-- Remova ou comente todas as outras linhas de CSS, incluindo Bootstrap e styles.css -->
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+    @* <link rel="stylesheet" href="~/CadastroClienteApi.styles.css" asp-append-version="true" /> *@
+</head>
+<body>
+    <!-- HEADER: Estrutura da Navbar estilizada pelo site.css -->
+    <header>
+        <!-- Apenas a classe "navbar" para estilização customizada -->
+        <nav class="navbar">
+            <div class="container-fluid">
+                <!-- Marca/Título Principal (Cadastro Cliente) -->
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Cadastro Cliente</a>
+                <!-- Lista de Links de Navegação -->
+                <!-- Apenas a classe "navbar-nav" e "flex-row" para estilização customizada -->
+                <ul class="navbar-nav flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Clientes" asp-action="Index">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/swagger">Documentação API (Swagger)</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- CORPO PRINCIPAL -->
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <!-- RODAPÉ -->
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - CadastroClienteApi
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

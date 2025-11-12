@@ -1,0 +1,219 @@
+/* /* ==================================================================== */
+/* 1. RESET BÁSICO E CONFIGURAÇÕES GLOBAIS */
+/* ==================================================================== */
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+body {
+    margin-bottom: 20px; /* Garante espaço para o footer */
+    background-color: #f7f9fc; /* Fundo cinza claro suave */
+    color: #333;
+}
+/* ==================================================================== */
+/* 2. ESTILO DE NAVEGAÇÃO E RODAPÉ */
+/* ==================================================================== */
+header {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave na barra de navegação */
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+}
+/* 2.1 ESTILO DA BARRA DE NAVEGAÇÃO (NAVBAR) */
+/* ------------------------------------------- */
+.navbar {
+    background-color: #343a40 !important; /* Fundo Escuro */
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.navbar-brand {
+    color: #ffffff !important; /* Texto Branco para o Título */
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.nav-item {
+    margin-right: 1rem;
+}
+.nav-link {
+    color: #cccccc !important; /* Cor dos links */
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.nav-link:hover {
+    color: #ffffff !important; /* Cor ao passar o mouse */
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 20px;
+    background-color: #ffffff;
+    border-top: 1px solid #e9ecef;
+}
+/* ==================================================================== */
+/* 3. ESTILO DE BOTÕES E LINKS */
+/* ==================================================================== */
+/* Estilo Base para todos os elementos que usam a classe 'btn' */
+.btn {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem; /* Tamanho padrão */
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    text-decoration: none; /* Remove sublinhado */
+    margin-right: 5px; 
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    color: #fff; /* Garante que o texto dentro dos botões seja branco */
+}
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+/* Botão Salvar/Principal (btn-success) - ADICIONADO PARA FORMULÁRIOS */
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+.btn-success:hover {
+    background-color: #1e7e34;
+    border-color: #1c7430;
+}
+/* Botão Editar (btn-info) */
+.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+.btn-info:hover {
+    background-color: #117a8b;
+    border-color: #10707f;
+}
+/* Botão Voltar/Secundário (btn-secondary) */
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+/* Botão Excluir (btn-danger) */
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+/* Estilo para Botões menores (btn-sm) */
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
+/* ==================================================================== */
+/* 4. ESTILOS ESPECÍFICOS DE CONTEÚDO (Lista e Formulários) */
+/* ==================================================================== */
+/* Títulos das páginas */
+h1 {
+    color: #007bff;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+/* Estilo para a Tabela de Clientes */
+.table {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05); /* Sombra suave na tabela */
+    border-radius: 8px;
+    overflow: hidden; 
+    background-color: #fff;
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    border-collapse: collapse;
+}
+.table thead {
+    background-color: #e9ecef; /* Fundo cinza claro para o cabeçalho */
+    color: #495057;
+}
+.table th, .table td {
+    vertical-align: middle; 
+    padding: 12px;
+    border-top: 1px solid #dee2e6;
+    text-align: left;
+}
+.table tbody tr:hover {
+    background-color: #f1f1f1; /* Destaca a linha ao passar o mouse */
+}
+/* Estilo para formulários */
+.form-group {
+    margin-bottom: 1rem;
+}
+.control-label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.text-danger {
+    color: #dc3545 !important;
+    font-size: 0.85em;
+}
+/* Estilos de Layout Geral */
+.container {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
